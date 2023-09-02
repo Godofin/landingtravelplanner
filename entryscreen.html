@@ -13,21 +13,28 @@
 
 <body class="bg-white">
 
-    <div class="p-32">
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+            /* isso garante que o corpo tenha pelo menos a altura da janela do navegador */
+        }
+    </style>
 
-    <div class="pt-96 text-center">
-
+    <div class="p-40 absolute bottom-0 w-full flex flex-col items-center">
         <a href="/login.html" type="button"
-            class="text-white bg-gray-500 m-2 px-12 py-3 hover:bg-gray-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-base text-center inline-flex items-center justify-center w-48 h-12">
+            class="text-white bg-gray-500 mb-2 px-12 py-3 hover:bg-gray-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-base text-center inline-flex items-center justify-center w-48 h-12">
             ENTRAR
         </a>
-    
-        <a href="signin.html" type="button"
-            class="text-white  bg-gray-500 m-2 px-12 py-3 hover:bg-gray-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-base inline-flex items-center justify-center w-48 h-12">
+
+        <a href="/signin.html" type="button"
+            class="text-white bg-gray-500 px-12 py-3 hover:bg-gray-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-base inline-flex items-center justify-center w-48 h-12">
             CADASTRO
         </a>
     </div>
-    
+
+
+
 
 </body>
 
