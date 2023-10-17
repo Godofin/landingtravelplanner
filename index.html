@@ -15,15 +15,15 @@
 
     <div class="w-full max-w-lg p-6 mt-8 flex flex-col items-center">
 
-        <img class="w-full m-8 " src="img/inicial.png" alt="duas pessoas conversando sobre viagem">
+        <img class="w-full m-3 " src="img/inicial.png" alt="duas pessoas conversando sobre viagem">
 
-        <img class="w-full mt-28 " src="img/wonder-letter.svg" alt="duas pessoas conversando sobre viagem">
+        <img class="w-full mt-24 " src="img/wonder-letter.svg" alt="duas pessoas conversando sobre viagem">
 
         <p class="w-full mt-5 text-xl  flex items-center justify-center text-center">
             Planeje e organize sua viagem de <br>maneira fácil!
         </p>
 
-        <button class="bg-gray-100 text-green-800 w-80 h-16 mt-28 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1C414B]">
+        <button  id="planTripButton" class="bg-gray-100 text-green-800 w-80 h-16 mt-28  text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1C414B]">
             Planeje sua viagem
         </button>
         
@@ -31,5 +31,12 @@
     </div>
 
 </body>
+
+<script>
+    document.getElementById("planTripButton").addEventListener("click", function() {
+        window.location.href = "./login.html";
+    });
+</script>
+
 
 </html>
