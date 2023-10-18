@@ -8,50 +8,65 @@
     <link rel="stylesheet" href="css/build.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
 
-    <title>Home</title>
+    <title>Listagem</title>
     
 </head>
+
+
 <header id="navbar" class="w-full bg-green-900 text-white py-4 px-4 fixed top-0 transition-all duration-300">
-    <div class="flex justify-center items-center h-full"> <!-- Aqui usamos flexbox para centralizar a imagem -->
-        <!-- Insira sua logo abaixo -->
-        <img src="img/wonder-white.svg" alt="logo" class="items-center h-8"> <!-- Ajuste o tamanho conforme necessário -->
+    <div class="flex justify-center items-center h-full"> 
+        <img src="img/wonder-white.svg" alt="logo" class="items-center h-8"> 
     </div>
 </header>
 
-<body>
-    <div class="pt-20 px-3">
-    <h1 class="text-2xl font-bold ">Olá, Viajante!</h1>
-        <div class="flex space-x-8 mt-6">
-            <div class="bg-gray-100 p-6 rounded-xl flex-1">
-                <h2 class="font-bold">Faltam</h2>
-                <div class="text-3xl mt-2">10</div>
-                <p class="text-gray-600">Dias</p>
-                <p class="text-gray-600">Itinerário X</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-xl flex-1">
-                <h2 class="font-bold">Temperatura</h2>
-                <div class="text-3xl mt-2">27*</div>
-                <p class="text-gray-600">graus</p>
-                <p class="text-gray-600">Itinerário X</p>
-            </div>
+<body class="pt-20 pb-20">
+    <form class="m-auto px-5"> 
+        <div class="space-y-2 ">
+            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome do Itinerario</label>
+            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
+        
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descrição do itinerário</label>
+            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+        
+            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data inicial</label>
+            <input type="date" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
+        
+            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data Final</label>
+            <input type="date" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
+        
+            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Destino</label>
+            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
+        
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Atividades a realizar</label>
+            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+            
+            <label for="small" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo do Evento</label>
+            <select id="small" class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 ">
+                <option value="festival">Festival</option>
+                <option value="travel">Viagem</option>
+                <option value="concert">Shows</option>
+                <option value="concert">Outro</option>
+            </select>
+        
         </div>
-        <div class="mt-6">
-            <h2 class="text-xl font-bold mb-4">Próximos Itinerários</h2>
-            <div class="bg-gray-100 p-6 rounded-xl mb-4">
-                <h3 class="font-bold">Dia 10</h3>
-                <p class="text-gray-600 mt-2">Itinerário X</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-xl">
-                <h3 class="font-bold">Dia 11</h3>
-                <p class="text-gray-600 mt-2">Itinerário X</p>
-            </div>
-        </div>
-    </div>
+        
+</form>
+
+    
+    
 </body>
 
-
-
 <footer>
+<div id="speedDial" class="fixed bottom-20 right-5 z-50">
+    <!-- Botão principal -->
+    <button id="mainActionButton" class="bg-green-900 text-white text-2xl w-14 h-14 rounded-full focus:outline-none shadow-2xl flex items-center justify-center text-2xl font-normal leading-none">
+        <svg class="w-5 h-5 mb-1 text-white dark:text-gray-400 group-hover:text-green-900 dark:group-hover:text-green-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+            <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
+        </svg>
+        
+      </button>
+    </div>
+</div>
 <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
     <div class="grid h-full max-w-xl grid-cols-3 mx-auto">
         <!-- Botão Home e tooltip -->
@@ -81,6 +96,8 @@
 </footer>
 
 
+
+
 <script>
     document.getElementById("tooltip-home").addEventListener("click", function() {
         window.location.href = "./home.html";
@@ -93,6 +110,7 @@
     });
 
 
+    // script.js
     let prevScrollpos = window.pageYOffset;
 
     window.onscroll = function() {
@@ -104,7 +122,10 @@
         }
         prevScrollpos = currentScrollPos;
     }
+
+
 </script>
+
 
 
 
