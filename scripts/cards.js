@@ -22,7 +22,7 @@ function renderItineraries(itineraries) {
 // Função para criar o HTML de cada card
 function createCardHTML(item) {
     console.log("Creating card with id:", item.ID);
-    const endDateFormatted = formatDateToLongFormat(item.end_date);
+    const endDateFormatted = formatDateToLongFormat(item.start_date);
     return `
     <div class="card m-auto px-5 md:px-20 pt-5 pb-5">
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -37,7 +37,7 @@ function createCardHTML(item) {
                 <p class="font-normal text-gray-700 dark:text-gray-400">${item.description}</p>
                 <div class="flex -mx-2 mt-4">
                     <div class="flex-1 px-2">
-                        <button class="edit-btn w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button data-id="${item.ID}" class="edit-btn w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Editar
                         </button>
                     </div>
@@ -52,6 +52,7 @@ function createCardHTML(item) {
     </div>`;
 }
 
+
 // Função para adicionar event listeners nos botões de deletar
 function attachDeleteEventListeners() {
     document.querySelectorAll('.delete-btn').forEach(button => {
@@ -61,6 +62,8 @@ function attachDeleteEventListeners() {
         });
     });
 }
+
+
 
 // Função para deletar um item específico
 function deleteItem(id, element) {

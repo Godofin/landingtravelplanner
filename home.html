@@ -26,29 +26,25 @@
     <div class="pt-20 px-3">
     <h1 class="text-2xl font-bold ">Olá, Viajante!</h1>
         <div class="flex space-x-8 mt-6">
-            <div class="bg-gray-100 p-6 rounded-xl flex-1">
+            <div class="bg-green-50 p-6 rounded-xl flex-1">
                 <h2 class="font-bold">Faltam</h2>
-                <div class="text-3xl mt-2">10</div>
-                <p class="text-gray-600">Dias</p>
-                <p class="text-gray-600">Itinerário X</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-xl flex-1">
-                <h2 class="font-bold">Temperatura</h2>
-                <div class="text-3xl mt-2">27*</div>
-                <p class="text-gray-600">graus</p>
-                <p class="text-gray-600">Itinerário X</p>
+                <div class="flex items-center space-x-2 pt-5">
+                    <svg class="w-6 h-6 text-green-400 self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm14-7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm-5-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm-5-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4Z"/>
+                    </svg>
+                    <div class="text-3xl self-center countdown-days text-green-900"></div>
+                    <p class="text-3xl self-center text-gray-600">Dias</p>
+                </div>
+                
+                <br>
+                <p class="font-bold">Para o evento: </p>
+
+                <p class="text-3xl mt-2 text-green-900 itinerary-title"></p>
             </div>
         </div>
         <div class="mt-6">
             <h2 class="text-xl font-bold mb-4">Próximos Itinerários</h2>
-            <div class="bg-gray-100 p-6 rounded-xl mb-4">
-                <h3 class="font-bold">Dia 10</h3>
-                <p class="text-gray-600 mt-2">Itinerário X</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-xl">
-                <h3 class="font-bold">Dia 11</h3>
-                <p class="text-gray-600 mt-2">Itinerário X</p>
-            </div>
+            <div id="itinerariesList" class="space-y-4">
         </div>
     </div>
 </body>
@@ -84,7 +80,9 @@
 </div>
 </footer>
 
-<script src="/cadastro.js"></script>
+<script src="scripts/dash.js"></script>
+<script src="scripts/dash_next.js"></script>
+
 <script>
     document.getElementById("tooltip-home").addEventListener("click", function() {
         window.location.href = "./home.html";
@@ -95,8 +93,12 @@
     document.getElementById("tooltip-profile").addEventListener("click", function() {
         window.location.href = "./profile.html";
     });
+    document.getElementById("mainActionButton").addEventListener("click", function() {
+        window.location.href = "./cadastro.html";
+    });
 
 
+    // script.js
     let prevScrollpos = window.pageYOffset;
 
     window.onscroll = function() {
@@ -108,6 +110,9 @@
         }
         prevScrollpos = currentScrollPos;
     }
+
+    
+
 </script>
 
 
