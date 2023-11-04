@@ -20,46 +20,42 @@
 </header>
 
 <body class="pt-20 pb-20">
-    <form class="m-auto px-5"> 
+    <form id="itinerary-form" class="m-auto px-5"> 
         <div class="space-y-2 ">
-            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome do Itinerario</label>
-            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
+            <label for="itinerary-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome do Itinerario</label>
+            <input type="text" id="itinerary-name" name="itineraryName" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
         
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descrição do itinerário</label>
-            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+            <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descrição do itinerário</label>
+            <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
         
-            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data inicial</label>
-            <input type="date" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
+            <label for="start-date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data inicial</label>
+            <input type="date" id="start-date" name="startDate" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
         
-            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data Final</label>
-            <input type="date" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
+            <label for="end-date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data Final</label>
+            <input type="date" id="end-date" name="endDate" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
         
-            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Destino</label>
-            <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
+            <label for="destination" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Destino</label>
+            <input type="text" id="destination" name="destination" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs">
         
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Atividades a realizar</label>
-            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+            <label for="activities" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Atividades a realizar</label>
+            <textarea id="activities" name="activities" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
             
-            <label for="small" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo do Evento</label>
-            <select id="small" class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 ">
+            <label for="event-type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo do Evento</label>
+            <select id="event-type" name="eventType" class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 ">
                 <option value="festival">Festival</option>
                 <option value="travel">Viagem</option>
                 <option value="concert">Shows</option>
-                <option value="concert">Outro</option>
+                <option value="other">Outro</option>
             </select>
-        
         </div>
-        
-</form>
-
-    
-    
+    </form>
+    <script src="./scripts/cadastro.js"></script>
 </body>
 
 <footer>
 <div id="speedDial" class="fixed bottom-20 right-5 z-50">
     <!-- Botão principal -->
-    <button id="mainActionButton" class="bg-green-900 text-white text-2xl w-14 h-14 rounded-full focus:outline-none shadow-2xl flex items-center justify-center text-2xl font-normal leading-none">
+    <button type="submit" id="mainActionButton" class="bg-green-900 text-white text-2xl w-14 h-14 rounded-full focus:outline-none shadow-2xl flex items-center justify-center text-2xl font-normal leading-none">
         <svg class="w-5 h-5 mb-1 text-white dark:text-gray-400 group-hover:text-green-900 dark:group-hover:text-green-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
             <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
         </svg>
@@ -67,6 +63,7 @@
       </button>
     </div>
 </div>
+
 <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
     <div class="grid h-full max-w-xl grid-cols-3 mx-auto">
         <!-- Botão Home e tooltip -->
@@ -94,6 +91,7 @@
     </div>
 </div>
 </footer>
+
 
 
 

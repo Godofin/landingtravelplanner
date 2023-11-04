@@ -21,61 +21,10 @@
 </header>
 
 <body class="pt-16 pb-20">
-<div class="m-auto px-5 md:px-20 pt-5 pb-5">
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="rounded-t-lg" src="./img/festival.png" alt="Imagem do Festival" />
-        </a>
-        <div class="p-2">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">The Town 2023</h5>
-            </a>
-            <!-- Data do Evento -->
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">10 de Setembro, 2023</p>
-            <p class="font-normal text-gray-700 dark:text-gray-400">Primeiro Festival de SP</p>
-            <!-- Botões -->
-            <div class="flex -mx-2 mt-4">
-                <div class="flex-1 px-2">
-                    <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Editar
-                    </button>
-                </div>
-                <div class="flex-1 px-2">
-                    <button class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                        Deletar
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="m-auto px-5 md:px-20 pt-5 pb-5">
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="rounded-t-lg" src="./img/travels.png" alt="Imagem de viagem" />
-        </a>
-        <div class="p-2">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Machu Picchu</h5>
-            </a>
-            <!-- Data do Evento -->
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">20 de Junho, 2024</p>
-            <p class="font-normal text-gray-700 dark:text-gray-400">Viagem inesquecível para o Peru</p>
-            <!-- Botões -->
-            <div class="flex -mx-2 mt-4">
-                <div class="flex-1 px-2">
-                    <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Editar
-                    </button>
-                </div>
-                <div class="flex-1 px-2">
-                    <button class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                        Deletar
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+<div id="card-container">
+    <!-- Os cards serão inseridos aqui pelo JavaScript -->
 </div>
 
 </body>
@@ -119,6 +68,7 @@
         </div>
 </footer>
 
+<script src="./scripts/cards.js"></script>
 
 <script>
     document.getElementById("tooltip-home").addEventListener("click", function() {
@@ -147,6 +97,8 @@
         }
         prevScrollpos = currentScrollPos;
     }
+
+    
 
 </script>
 
