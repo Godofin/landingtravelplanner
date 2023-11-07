@@ -7,46 +7,54 @@
     <link rel="icon" type="image/svg+xml" href="img/wonder-white.svg">
     <link rel="stylesheet" href="css/build.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
-
     <title>Login</title>
 </head>
 
 <body class="bg-white flex flex-col items-center justify-center px-4">
 
     <div class="w-full max-w-lg p-6 mt-8 flex flex-col items-center">
+        <img class="w-40 m-3 " src="img/cadastro.svg" alt="Cadastro">
+        <img class="w-full m-10 " src="img/wonder-letter.svg" alt="Wonder">
 
-        <img class="w-40 m-3 " src="img/cadastro.svg" alt="duas pessoas conversando sobre viagem">
-        <img class="w-full m-10 " src="img/wonder-letter.svg" alt="duas pessoas conversando sobre viagem">
+        <form id="loginForm" class="w-full flex flex-col items-center">
+            <input type="email" id="email" class="h-10 w-80 bg-gray-300 placeholder-gray-600 rounded-xl" placeholder="    Email" required>
+            <input type="password" id="password" class="mt-2 h-10 w-80 bg-gray-300 placeholder-gray-600 rounded-xl" placeholder="    Password" required>
 
-        <input type="email" class="h-10 w-80 bg-gray-300 placeholder-gray-600 rounded-xl" placeholder="   Email">
-        <input type="password" class="mt-2 h-10 w-80 bg-gray-300 placeholder-gray-600 rounded-xl" placeholder="   Password">
+            <button type="submit" id="loginButton" class="bg-green-900 text-white w-80 h-10 mt-5 text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1C414B]">
+                Entrar
+            </button>
+        </form>
 
-
-        <button  id="loginButton" class="bg-green-900 text-white w-80 h-10 mt-5  text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1C414B]">
-            Entrar
-        </button>
-        
         <div class="flex items-center justify-center my-4">
             <hr class="border-t border-gray-600 w-1/4">
             <span class="mx-2 text-gray-500">ou</span>
             <hr class="border-t border-gray-600 w-1/4">
         </div>
-    
-        <button  id="signInButton" class="bg-green-900 text-white w-80 h-10 mt-1 text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1C414B]">
+
+        <button id="signInButton" class="bg-green-900 text-white w-80 h-10 mt-1 text-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1C414B]">
             Cadastrar
         </button>
-        
     </div>
 
-</body>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-<script>
-    document.getElementById("loginButton").addEventListener("click", function() {
-        window.location.href = "./home.html";
-    });
-    document.getElementById("signInButton").addEventListener("click", function() {
-        window.location.href = "./home.html";
-    });
-</script>
+            // Substitua pelos valores específicos que você deseja verificar
+            if (email === "admin@admin.com" && password === "admin") {
+                window.location.href = "./home.html";
+            } else {
+                alert('Email ou senha inválidos.');
+            }
+        });
+
+        document.getElementById("signInButton").addEventListener("click", function() {
+            window.location.href = "#"; // Modifique para a página de cadastro real
+        });
+    </script>
+
+</body>
 
 </html>
