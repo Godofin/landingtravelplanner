@@ -21,7 +21,6 @@ function renderItineraries(itineraries) {
 
 // Função para criar o HTML de cada card
 function createCardHTML(item) {
-    console.log("Creating card with id:", item.ID);
     const endDateFormatted = formatDateToLongFormat(item.start_date);
     return `
     <div class="card m-auto px-5 md:px-20 pt-5 pb-5">
