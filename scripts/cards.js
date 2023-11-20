@@ -20,13 +20,22 @@ function renderItineraries(itineraries) {
 }
 
 // Função para criar o HTML de cada card
+// Função para criar o HTML de cada card
 function createCardHTML(item) {
     const endDateFormatted = formatDateToLongFormat(item.start_date);
+    const imageMap = {
+        "1": "./img/festival.png",
+        "2": "./img/travels.png",
+        "3": "./img/concert.png",
+        "4": "./img/default.png"
+    };
+    const imageUrl = imageMap[item.image] || "./img/default.png"; // Imagem padrão caso o valor não esteja mapeado
+
     return `
     <div class="card m-auto px-5 md:px-20 pt-5 pb-5">
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img class="rounded-t-lg" src="./img/festival.png" alt="" />
+                <img class="rounded-t-lg" src="${imageUrl}" alt="${item.name}" />
             </a>
             <div class="p-5">
                 <a href="#">
@@ -51,8 +60,6 @@ function createCardHTML(item) {
     </div>`;
 }
 
-
-// Função para adicionar event listeners nos botões de deletar
 function attachDeleteEventListeners() {
     document.querySelectorAll('.delete-btn').forEach(button => {
         button.addEventListener('click', function(event) {
@@ -62,7 +69,27 @@ function attachDeleteEventListeners() {
     });
 }
 
+function attachEditEventListeners() {
+    document.querySelectorAll('.edit-btn').forEach(button => {
+      button.addEventListener('click', function(event) {
+        const id = event.target.getAttribute('data-id');
+        // Guardar o ID no localStorage é uma maneira de passar o ID para a página de edição
+        localStorage.setItem('editItemId', id);
+        // Redirecionar para a página de cadastro, que agora estará em modo de edição
+        window.location.href = './cadastro.html'; // Ajuste o caminho se necessário
+      });
+    });
+  }
 
+  function attachEditEventListeners() {
+    document.querySelectorAll('.edit-btn').forEach(button => {
+      button.addEventListener('click', function(event) {
+        const id = event.target.getAttribute('data-id');
+        localStorage.setItem('editItemId', id);
+        window.location.href = './cadastro.html'; // Certifique-se de que este caminho esteja correto
+      });
+    });
+  }
 
 // Função para deletar um item específico
 function deleteItem(id, element) {
@@ -70,15 +97,17 @@ function deleteItem(id, element) {
         method: 'DELETE',
     })
     .then(response => {
+        console.log("Resposta do servidor:", response); // Adicione esta linha para depuração
         if (!response.ok) {
             throw new Error(`Erro no status: ${response.status}`);
         }
         element.closest('.card').remove();
-        // opcional: refetch e renderize os itinerários para atualizar a lista sem recarregar a página
-        // fetchAndDisplayItineraries();
     })
-    .catch(error => console.error('Erro ao deletar o item:', error));
+    .catch(error => {
+        console.error('Erro ao deletar o item:', error);
+    });
 }
+
 
 // Função auxiliar para formatar datas
 function formatDateToLongFormat(dateString) {
